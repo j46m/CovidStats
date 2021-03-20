@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CovidStats.data", "CovidSta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CovidStats.Tests", "CovidStats.Tests\CovidStats.Tests.csproj", "{800A9C21-A491-4707-ADAF-48258B62C56E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CovidStats.logic", "CovidStats.logic\CovidStats.logic.csproj", "{3B9E8244-03ED-486E-8450-1D123CA33FFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{800A9C21-A491-4707-ADAF-48258B62C56E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{800A9C21-A491-4707-ADAF-48258B62C56E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{800A9C21-A491-4707-ADAF-48258B62C56E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B9E8244-03ED-486E-8450-1D123CA33FFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B9E8244-03ED-486E-8450-1D123CA33FFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B9E8244-03ED-486E-8450-1D123CA33FFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B9E8244-03ED-486E-8450-1D123CA33FFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

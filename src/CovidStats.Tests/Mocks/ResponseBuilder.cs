@@ -16,7 +16,7 @@ namespace CovidStats.Tests.Mocks
                     new Datum
                     {
                         date = "2021-03-18",
-                        confirmed = 56044,
+                        confirmed = 119528,
                         deaths = 2462,
                         recovered = 49664,
                         confirmed_diff = 28,
@@ -38,7 +38,29 @@ namespace CovidStats.Tests.Mocks
                     new Datum
                     {
                         date = "2021-03-18",
-                        confirmed = 119528,
+                        confirmed = 1008,
+                        deaths = 27,
+                        recovered = 598,
+                        confirmed_diff = 16,
+                        deaths_diff = 0,
+                        recovered_diff = 0,
+                        last_update = "2021-03-19 05:26:09",
+                        active = 383,
+                        active_diff = 16,
+                        fatality_rate = 0.0268d,
+                        region = new Region
+                        {
+                            cities = null,
+                            name = "Antigua and Barbuda",
+                            iso = "ATG",
+                            lat = "17.0608",
+                            @long = "-61.7964"
+                        }
+                    },
+                    new Datum
+                    {
+                        date = "2021-03-18",
+                        confirmed = 56044,
                         deaths = 2106,
                         recovered = 83264,
                         confirmed_diff = 590,
@@ -56,7 +78,7 @@ namespace CovidStats.Tests.Mocks
                             lat = "41.1533",
                             @long = "20.1683"
                         }
-                    }
+                    },
                 }
             };
 

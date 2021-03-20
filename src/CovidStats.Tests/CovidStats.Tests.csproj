@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CovidStats.data\CovidStats.data.csproj" />
+    <ProjectReference Include="..\CovidStats.logic\CovidStats.logic.csproj" />
   </ItemGroup>
 
 </Project>
