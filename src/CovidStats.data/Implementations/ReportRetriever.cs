@@ -27,9 +27,14 @@ namespace CovidStats.data.Implementations
             response.EnsureSuccessStatusCode();
             var apiResponse = await response.Content.ReadAsStringAsync();
 
-            var allData = JsonConvert.DeserializeObject<ApiReportResponse>(apiResponse);
+            var allData = DeserializeData(apiResponse);
 
             return allData;
+        }
+
+        private ApiReportResponse DeserializeData(string apiResponse)
+        {
+            return JsonConvert.DeserializeObject<ApiReportResponse>(apiResponse);
         }
     }
 }
