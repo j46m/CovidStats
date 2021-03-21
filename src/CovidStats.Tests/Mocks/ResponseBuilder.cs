@@ -30,6 +30,7 @@ namespace CovidStats.Tests.Mocks
                         {
                             cities = null,
                             name = "Afghanistan",
+                            province = ""
                             iso = "AFG",
                             lat = "33.9391",
                             @long = "67.7100"

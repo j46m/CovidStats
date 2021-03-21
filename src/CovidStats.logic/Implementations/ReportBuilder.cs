@@ -20,7 +20,7 @@ namespace CovidStats.logic.Implementations
         public async Task<List<ReportData>> GetReportData()
         {
             var regionDataFromApi = await _reportRetriever.RetrieveAllData();
-            var topTenRegions = FilterTopTenRegions(regionDataFromApi).ToList();
+            var topTenRegions = FilterTopTenData(regionDataFromApi).ToList();
             var reportData = new List<ReportData>();
 
             topTenRegions.ForEach(x =>
@@ -28,6 +28,8 @@ namespace CovidStats.logic.Implementations
 
                 reportData.Add(new ReportData
                 {
+                    RegionName = x.region.name,
+                    ProvinceName = x.region.province,
                     Cases = x.confirmed,
                     Deaths = x.deaths
                 });
@@ -37,7 +39,7 @@ namespace CovidStats.logic.Implementations
             return reportData;
         }
 
-        private IEnumerable<Datum> FilterTopTenRegions(ApiReportResponse apiResponse)
+        private IEnumerable<Datum> FilterTopTenData(ApiReportResponse apiResponse)
         {
             return apiResponse.data.OrderBy(x => x.confirmed).Take(10);
         }
