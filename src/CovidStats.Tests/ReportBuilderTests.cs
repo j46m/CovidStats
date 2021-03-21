@@ -27,9 +27,9 @@ namespace CovidStats.Tests
             IReportBuilder regionReportBuilder = new ReportBuilder(reportRetriever);
             var report = await regionReportBuilder.GetReportData();
 
-            Assert.Equal(1008, report[0].Cases);
+            Assert.Equal(119528, report[0].Cases);
             Assert.Equal(56044, report[1].Cases);
-            Assert.Equal(119528, report[2].Cases);
+            Assert.Equal(1008, report[2].Cases);
         }
     }
 

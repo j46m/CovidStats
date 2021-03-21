@@ -41,7 +41,10 @@ namespace CovidStats.logic.Reports.Implementations
 
         private IEnumerable<Datum> FilterTopTenData(ApiReportResponse apiResponse)
         {
-            return apiResponse.data.OrderBy(x => x.confirmed).Take(10);
+            return apiResponse.data
+                .Where(x => x.confirmed > 0)
+                .OrderByDescending(x => x.confirmed)
+                .Take(10);
         }
     }
 }
