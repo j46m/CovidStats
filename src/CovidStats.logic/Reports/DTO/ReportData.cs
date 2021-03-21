@@ -1,4 +1,4 @@
-﻿namespace CovidStats.logic.DTO
+﻿namespace CovidStats.logic.Reports.DTO
 {
     public class ReportData
     {

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using CovidStats.logic.DTO;
+using CovidStats.logic.Reports.DTO;
 
-namespace CovidStats.logic.Interfaces
+namespace CovidStats.logic.Reports.Interfaces
 {
     public interface IReportBuilder
     {

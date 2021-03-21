@@ -2,8 +2,8 @@
 using CovidStats.data.DTO;
 using CovidStats.data.Implementations;
 using CovidStats.data.Interfaces;
-using CovidStats.logic.Implementations;
-using CovidStats.logic.Interfaces;
+using CovidStats.logic.Reports.Implementations;
+using CovidStats.logic.Reports.Interfaces;
 using CovidStats.Tests.Mocks;
 using Xunit;
 

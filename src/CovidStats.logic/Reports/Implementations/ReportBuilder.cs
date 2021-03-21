@@ -3,10 +3,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using CovidStats.data.DTO;
 using CovidStats.data.Interfaces;
-using CovidStats.logic.DTO;
-using CovidStats.logic.Interfaces;
+using CovidStats.logic.Reports.DTO;
+using CovidStats.logic.Reports.Interfaces;
 
-namespace CovidStats.logic.Implementations
+namespace CovidStats.logic.Reports.Implementations
 {
     public class ReportBuilder : IReportBuilder
     {
