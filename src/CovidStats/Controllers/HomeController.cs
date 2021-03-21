@@ -1,10 +1,7 @@
 ﻿using CovidStats.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 using CovidStats.logic.Reports.Interfaces;
 
@@ -24,6 +21,13 @@ namespace CovidStats.Controllers
         public async Task<IActionResult> Index()
         {
             var model = await _reportBuilder.GetReportData();
+            return View(model);
+        }
+
+        public async Task<IActionResult> Details(string regionIso)
+        {
+            var param = $"?iso={regionIso}";
+            var model = await _reportBuilder.GetReportData(param);
             return View(model);
         }
 

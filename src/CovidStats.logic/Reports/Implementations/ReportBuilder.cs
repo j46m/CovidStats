@@ -17,9 +17,9 @@ namespace CovidStats.logic.Reports.Implementations
             _reportRetriever = reportRetriever;
         }
 
-        public async Task<List<ReportData>> GetReportData()
+        public async Task<List<ReportData>> GetReportData(string param = "")
         {
-            var regionDataFromApi = await _reportRetriever.RetrieveAllData();
+            var regionDataFromApi = await _reportRetriever.RetrieveAllData(param);
             var topTenRegions = FilterTopTenData(regionDataFromApi).ToList();
             var reportData = new List<ReportData>();
 
@@ -32,6 +32,7 @@ namespace CovidStats.logic.Reports.Implementations
                     Id = iD,
                     RegionName = x.region.name,
                     ProvinceName = x.region.province,
+                    Iso = x.region.iso,
                     Cases = x.confirmed,
                     Deaths = x.deaths
                 });

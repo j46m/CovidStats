@@ -6,6 +6,6 @@ namespace CovidStats.logic.Reports.Interfaces
 {
     public interface IReportBuilder
     {
-        Task<List<ReportData>> GetReportData();
+        Task<List<ReportData>> GetReportData(string param = "");
     }
 }
