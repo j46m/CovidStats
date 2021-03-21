@@ -20,7 +20,7 @@ namespace CovidStats.Tests
                 ApiKey = "48c6ea5926msh35c92edffc8d551p130b01jsnb7aafad496a2",
                 ApiHost = "covid-19-statistics.p.rapidapi.com",
             };
-            var clientFactory = ClientBuilder.ReportClientFactory(ResponseBuilder.BuildOkResponse());
+            var clientFactory = HttpClientBuilder.ReportClientFactory(ResponseBuilder.BuildOkResponse());
             IReportRetriever reportRetriever = new ReportRetriever(reportConfig, clientFactory);
 
 

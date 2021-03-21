@@ -1,7 +1,9 @@
-﻿namespace CovidStats.logic.Files.Interfaces
+﻿using System.Threading.Tasks;
+
+namespace CovidStats.logic.Files.Interfaces
 {
     public interface IFileSaver
     {
-        string SaveToFile(string filePath, string fileExtension, string dataToSave);
+        Task<string> SaveToFile(string filePath, string fileExtension, string dataToSave);
     }
 }

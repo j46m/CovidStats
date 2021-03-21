@@ -7,7 +7,7 @@ using Moq.Protected;
 
 namespace CovidStats.Tests.Mocks
 {
-    public class ClientBuilder
+    public class HttpClientBuilder
     {
         public static IHttpClientFactory ReportClientFactory(StringContent content, HttpStatusCode statusCode = HttpStatusCode.OK)
         {
