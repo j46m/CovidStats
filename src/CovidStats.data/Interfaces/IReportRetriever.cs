@@ -5,6 +5,6 @@ namespace CovidStats.data.Interfaces
 {
     public interface IReportRetriever
     {
-        Task<ApiReportResponse> RetrieveAllData();
+        Task<ApiReportResponse> RetrieveAllData(string param = "");
     }
 }

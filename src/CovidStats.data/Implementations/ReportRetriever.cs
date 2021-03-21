@@ -15,14 +15,14 @@ namespace CovidStats.data.Implementations
             _config = config;
             _httpFactory = httpFactory;
         }
-        public async Task<ApiReportResponse> RetrieveAllData()
+        public async Task<ApiReportResponse> RetrieveAllData(string param = "")
         {
             var httpClient = _httpFactory.CreateClient("ReportDataClient");
 
             httpClient.DefaultRequestHeaders.Add("x-rapidapi-key", _config.ApiKey);
             httpClient.DefaultRequestHeaders.Add("x-rapidapi-host", _config.ApiHost);
 
-            using var response = await httpClient.GetAsync(_config.Url);
+            using var response = await httpClient.GetAsync($"_config.Url{param}");
 
             response.EnsureSuccessStatusCode();
             var apiResponse = await response.Content.ReadAsStringAsync();
