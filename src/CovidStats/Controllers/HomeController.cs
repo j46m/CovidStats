@@ -6,21 +6,25 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using CovidStats.logic.Reports.Interfaces;
 
 namespace CovidStats.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IReportBuilder _reportBuilder;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IReportBuilder reportBuilder)
         {
             _logger = logger;
+            _reportBuilder = reportBuilder;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var model = await _reportBuilder.GetReportData();
+            return View(model);
         }
 
         public IActionResult Privacy()

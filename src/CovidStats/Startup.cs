@@ -7,7 +7,13 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using CovidStats.data.DTO;
+using CovidStats.data.Implementations;
+using CovidStats.data.Interfaces;
+using CovidStats.logic.Reports.Implementations;
+using CovidStats.logic.Reports.Interfaces;
 
 namespace CovidStats
 {
@@ -23,6 +29,16 @@ namespace CovidStats
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var reportConfig = new ReportConfig
+            {
+                Url = "https://covid-19-statistics.p.rapidapi.com/reports",
+                ApiKey = "48c6ea5926msh35c92edffc8d551p130b01jsnb7aafad496a2",
+                ApiHost = "covid-19-statistics.p.rapidapi.com",
+            };
+
+            services.AddHttpClient();
+            services.AddScoped<IReportRetriever>(x => new ReportRetriever(reportConfig,x.GetRequiredService<IHttpClientFactory>()));
+            services.AddScoped<IReportBuilder>(x => new ReportBuilder(x.GetRequiredService<IReportRetriever>()));
             services.AddControllersWithViews();
         }
 

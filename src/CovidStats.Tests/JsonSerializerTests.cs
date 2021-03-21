@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 using CovidStats.logic.Files.Implementations;
 using CovidStats.logic.Files.Interfaces;
 using CovidStats.logic.Reports.DTO;
@@ -10,7 +9,7 @@ namespace CovidStats.Tests
     public class JsonSerializerTests
     {
         [Fact]
-        public async Task ExpectedValuesToSerialize()
+        public void ExpectedValuesToSerialize()
         {
             var reportData = new List<ReportData>
             {

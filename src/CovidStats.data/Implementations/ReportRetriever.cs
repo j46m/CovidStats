@@ -22,7 +22,7 @@ namespace CovidStats.data.Implementations
             httpClient.DefaultRequestHeaders.Add("x-rapidapi-key", _config.ApiKey);
             httpClient.DefaultRequestHeaders.Add("x-rapidapi-host", _config.ApiHost);
 
-            using var response = await httpClient.GetAsync($"_config.Url{param}");
+            using var response = await httpClient.GetAsync($"{_config.Url}{param}");
 
             response.EnsureSuccessStatusCode();
             var apiResponse = await response.Content.ReadAsStringAsync();
