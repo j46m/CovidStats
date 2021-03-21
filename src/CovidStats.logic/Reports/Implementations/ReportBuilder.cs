@@ -23,11 +23,13 @@ namespace CovidStats.logic.Reports.Implementations
             var topTenRegions = FilterTopTenData(regionDataFromApi).ToList();
             var reportData = new List<ReportData>();
 
+            var iD = 0;
             topTenRegions.ForEach(x =>
             {
-
+                iD++;
                 reportData.Add(new ReportData
                 {
+                    Id = iD,
                     RegionName = x.region.name,
                     ProvinceName = x.region.province,
                     Cases = x.confirmed,
