@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using CovidStats.logic.Files.Implementations;
 using CovidStats.logic.Files.Interfaces;
@@ -34,9 +35,12 @@ namespace CovidStats.Tests
                 }
             };
             var dataToSave = JsonConvert.SerializeObject(reportData);
-
+            var expectedFileName = $"{DateTime.Now.Year}{DateTime.Now.Month:D2}{DateTime.Now.Day:D2}{DateTime.Now.Hour}{DateTime.Now.Minute:D2}{DateTime.Now.Second:D2}";
+            
             IFileSaver fileSaver = new FileSaver();
-            await fileSaver.SaveToFile(filePath, fileExtension, dataToSave);
+            var actualFileName = await fileSaver.SaveToFile(filePath, fileExtension, dataToSave);
+
+            Assert.Equal($"{expectedFileName}{fileExtension}", actualFileName);
         }
     }
 }

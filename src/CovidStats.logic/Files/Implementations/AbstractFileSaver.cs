@@ -7,7 +7,7 @@ namespace CovidStats.logic.Files.Implementations
     {
         protected async Task CreateFile(string filePath, string fileName, string fileExtension, string data)
         {
-            var finalPath = $"{filePath}{fileName}{fileExtension}";
+            var finalPath = $"{filePath}\\{fileName}{fileExtension}";
 
             await using var writer = File.CreateText(finalPath);
             await writer.WriteAsync(data);

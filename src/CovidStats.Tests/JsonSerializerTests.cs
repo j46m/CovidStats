@@ -28,7 +28,7 @@ namespace CovidStats.Tests
                     RegionName = "Region test 2"
                 }
             };
-            const string expectedValue = "[{\"RegionName\":\"Region test\",\"ProvinceName\":\"Province test\",\"Cases\":1122,\"Deaths\":1001},{\"RegionName\":\"Region test 2\",\"ProvinceName\":\"Province test 2\",\"Cases\":2233,\"Deaths\":1011}]";
+            const string expectedValue = "[{\"Id\":0,\"RegionName\":\"Region test\",\"ProvinceName\":\"Province test\",\"Iso\":null,\"Cases\":1122,\"Deaths\":1001},{\"Id\":0,\"RegionName\":\"Region test 2\",\"ProvinceName\":\"Province test 2\",\"Iso\":null,\"Cases\":2233,\"Deaths\":1011}]";
 
             ISerializer serializer = new JsonSerializer();
             var sut = serializer.Serialize(reportData);

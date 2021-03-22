@@ -12,4 +12,8 @@
     <ProjectReference Include="..\CovidStats.logic\CovidStats.logic.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\files\" />
+  </ItemGroup>
+
 </Project>

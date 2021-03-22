@@ -7,6 +7,8 @@ using System.Net.Http;
 using CovidStats.data.DTO;
 using CovidStats.data.Implementations;
 using CovidStats.data.Interfaces;
+using CovidStats.logic.Files.Implementations;
+using CovidStats.logic.Files.Interfaces;
 using CovidStats.logic.Reports.Implementations;
 using CovidStats.logic.Reports.Interfaces;
 
@@ -34,6 +36,11 @@ namespace CovidStats
             services.AddHttpClient();
             services.AddScoped<IReportRetriever>(x => new ReportRetriever(reportConfig,x.GetRequiredService<IHttpClientFactory>()));
             services.AddScoped<IReportBuilder>(x => new ReportBuilder(x.GetRequiredService<IReportRetriever>()));
+
+            services.AddSingleton<ISerializer, JsonSerializer>(); //TODO: Factory to return XmlSerializer 
+            services.AddScoped<IFileSaver, FileSaver>();
+            services.AddScoped<IFileGetter, FileGetter>();
+
             services.AddControllersWithViews();
         }
 

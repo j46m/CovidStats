@@ -27,8 +27,8 @@ namespace CovidStats.Tests
             var response = await reportRetriever.RetrieveAllData();
 
 
-            Assert.Equal("AFG",response.data[0].region.iso);
-            Assert.Equal("ALB", response.data[1].region.iso);
+            Assert.Equal("AFG", response.data[0].region.iso);
+            Assert.Equal("ATG", response.data[1].region.iso);
         }
 
         [Fact]

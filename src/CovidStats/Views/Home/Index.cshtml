@@ -7,27 +7,28 @@
 <div class="text-center">
     <p class="h3">Top ten world regions with most COVID-19 cases</p>
 
-        <table class="table table-hover">
-            <thead>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Region</th>
+                <th scope="col">Cases</th>
+                <th scope="col">Deaths</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var data in Model)
+            {
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Region</th>
-                    <th scope="col">Cases</th>
-                    <th scope="col">Deaths</th>
+                    <th scope="row">@data.Id</th>
+                    <td>@data.RegionName</td>
+                    <td>@data.Cases</td>
+                    <td>@data.Deaths</td>
+                    <td><a href=@Url.Action("Details","Home",new {regionIso = data.Iso})>Details</a></td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var data in Model)
-                {
-                    <tr>
-                        <th scope="row">@data.Id</th>
-                        <td>@data.RegionName</td>
-                        <td>@data.Cases</td>
-                        <td>@data.Deaths</td>
-                        <td><a href=@Url.Action("Details","Home",new {regionIso = data.Iso})>Edit</a></td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-
+            }
+        </tbody>
+    </table>
+    <a href=@Url.Action("DownloadFile","Home",new {fileExtension = ".json"})>JSON download</a>
 </div>
